@@ -50,14 +50,15 @@ To change a DirecTV channel from an automation or a script:
 
 In YAML, refer to this action as `media_player.play_media`:
 
-```yaml
-action: media_player.play_media
-target:
-  entity_id: media_player.directv_receiver
-data:
-  media_content_id: "202"
-  media_content_type: channel
-```
+{% example %}
+action: |
+  action: media_player.play_media
+  target:
+    entity_id: media_player.directv_receiver
+  data:
+    media_content_id: "202"
+    media_content_type: channel
+{% endexample %}
 
 ### Sending remote commands in automations
 
@@ -76,17 +77,18 @@ To send a DirecTV remote command from an automation or a script:
 
 In YAML, refer to this action as `remote.send_command`:
 
-```yaml
-action: remote.send_command
-target:
-  entity_id: remote.directv_receiver
-data:
-  command:
-    - left
-    - left
-    - menu
-    - select
-```
+{% example %}
+action: |
+  action: remote.send_command
+  target:
+    entity_id: remote.directv_receiver
+  data:
+    command:
+      - left
+      - left
+      - menu
+      - select
+{% endexample %}
 
 The commands available to you depend on the DirecTV receiver. Supported commands include:
 
