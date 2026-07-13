@@ -61,7 +61,7 @@ data:
 
 ### Sending remote commands in automations
 
-To send remote control button commands to a DirecTV receiver, use the `remote.send_command` action and select the DirecTV remote as the target.
+To send remote control button commands to a DirecTV receiver, use the [**Send remote command**](/actions/remote.send_command/) action and select the DirecTV remote as the target.
 
 To send a DirecTV remote command from an automation or a script:
 
