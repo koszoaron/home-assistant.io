@@ -41,6 +41,20 @@ To change the channel on a DirecTV receiver, use the [**Play specified media**](
 
 To send remote control button commands to a DirecTV receiver, use the [**Send remote command**](/actions/remote.send_command/) action and select the DirecTV remote as the target.
 
+A typical action for pressing several buttons looks like this:
+
+```yaml
+action: remote.send_command
+target:
+  entity_id: remote.directv_receiver
+data:
+  command:
+    - left
+    - left
+    - menu
+    - select
+```
+
 The commands available to you depend on the DirecTV receiver. Supported commands include:
 
 - `power`
