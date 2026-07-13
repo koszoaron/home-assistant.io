@@ -35,60 +35,11 @@ The DirecTV remote platform allows you to send remote control buttons to a Direc
 
 ### Changing channels in automations
 
-To change the channel on a DirecTV receiver, use the [**Play specified media**](/actions/media_player.play_media/) action and select the DirecTV media player as the target.
-
-To change a DirecTV channel from an automation or a script:
-
-1. Go to {% my automations title="**Settings** > **Automations & scenes**" %}.
-2. Open an existing automation or script, or select **Create automation** > **Create new automation**.
-3. If you are setting up a new automation, add a trigger in the **When** section. Scripts do not need a trigger. They run when something else calls them.
-4. In the **Then do** section, select **Add action**.
-5. Select what you want to control. Under **By target**, select the DirecTV media player.
-6. From the actions shown for that target, select **Play specified media**.
-7. Enter the channel number as the **Media content ID** and use `channel` as the **Media content type**.
-8. Select **Save**.
-
-In YAML, refer to this action as `media_player.play_media`:
-
-{% example %}
-action: |
-  action: media_player.play_media
-  target:
-    entity_id: media_player.directv_receiver
-  data:
-    media_content_id: "202"
-    media_content_type: channel
-{% endexample %}
+To change the channel on a DirecTV receiver, use the [**Play specified media**](/actions/media_player.play_media/) action and select the DirecTV media player as the target. Enter the channel number as the **Media content ID** and use `channel` as the **Media content type**.
 
 ### Sending remote commands in automations
 
 To send remote control button commands to a DirecTV receiver, use the [**Send remote command**](/actions/remote.send_command/) action and select the DirecTV remote as the target.
-
-To send a DirecTV remote command from an automation or a script:
-
-1. Go to {% my automations title="**Settings** > **Automations & scenes**" %}.
-2. Open an existing automation or script, or select **Create automation** > **Create new automation**.
-3. If you are setting up a new automation, add a trigger in the **When** section. Scripts do not need a trigger. They run when something else calls them.
-4. In the **Then do** section, select **Add action**.
-5. Select what you want to control. Under **By target**, select the DirecTV remote.
-6. From the actions shown for that target, select **Send remote command**.
-7. Enter a command, or enter a list of commands.
-8. Select **Save**.
-
-In YAML, refer to this action as `remote.send_command`:
-
-{% example %}
-action: |
-  action: remote.send_command
-  target:
-    entity_id: remote.directv_receiver
-  data:
-    command:
-      - left
-      - left
-      - menu
-      - select
-{% endexample %}
 
 The commands available to you depend on the DirecTV receiver. Supported commands include:
 
